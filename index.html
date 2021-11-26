@@ -154,6 +154,10 @@
             }
 			
 			@media screen and (max-width: 800px) and (orientation:portrait) {
+                .navbar-brand{
+                    font-size: 18px;
+                }
+
                 .main{
                     width: 100%;
                     height: auto;
@@ -169,13 +173,18 @@
                 }
 
                 .footDiv{
-                    direction: column;           
+                    flex-direction: column;           
                 }
                 
                 body{
                     background-image: unset;
                     width: 100%;
                 }
+
+                footer{
+                    padding-left: 15px;
+					height: "fit-content";
+				}
 
                 h1{
                     font-size: 32px;

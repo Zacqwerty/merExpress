@@ -171,6 +171,7 @@
                 margin: 0;
                 padding: 0;
                 background-color: rgb(236, 236, 236);
+                color: white;
                 overflow: auto;
             }
 
@@ -261,6 +262,10 @@
             }
 			
 		@media screen and (max-width: 800px) and (orientation:portrait) {
+                .navbar-brand{
+                    font-size: 18px;
+                }
+
                 .main{
                     width: 100%;
                     height: "fit-content";
@@ -299,7 +304,7 @@
 				}
 
                 .footDiv{
-                    direction: column;           
+                    flex-direction: column;           
                 }
 				
 				.infoDiv{
@@ -321,8 +326,10 @@
                 }
 
 				footer{
+                    padding-left: 15px;
 					height: "fit-content";
 				}
+
                 h1{
                     font-size: 24px;
                 }
