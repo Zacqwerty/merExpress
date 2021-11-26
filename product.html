@@ -16,17 +16,17 @@
         <style>
             @font-face {
                 font-family: 'Martires';
-                src: url(./fonts/BBTMartiresFree-Regular.otf);
+                src: url("./fonts/BBTMartiresFree-Regular.otf");
             }
 
             @font-face {
                 font-family: 'Quiapo';
-                src: url(./fonts/Quiapo_Free.otf);
+                src: url("./fonts/Quiapo_Free.otf");
             }
 
             @font-face {
                 font-family: 'Bantayog';
-                src: url(./fonts/Bantayog-Regular.otf);
+                src: url("./fonts/Bantayog-Regular.otf");
             }
 
             .main{
@@ -116,7 +116,7 @@
             }
 
             body {
-                background: url(./imgs/BackgroundImage.png) no-repeat fixed;
+                background: url(./imgs/BackgroundImage.png) center fixed;
                 background-size: 100%;
                 width: 100%;
                 margin: 0;
@@ -176,11 +176,98 @@
                 font-size: 14px !important;
                 color: whitesmoke !important;
             }
+			
+			@media screen and (max-width: 800px) and (orientation:portrait) {
+                .main{
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    box-shadow: unset;
+                }
+
+                .hImg{
+                    width: 100px !important;
+                    height: 100px !important;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+
+                .footDiv{
+                    direction: column;           
+                }
+                
+                body{
+                    background-image: unset;
+                    width: 100%;
+                }
+
+                h1{
+                    font-size: 32px;
+                }
+				
+				h2{
+					font-size: 28px;
+				}
+				p{
+					font-size:18px;
+				}
+				
+				::-webkit-scrollbar{
+                display: none
+            }
+
+           		::-webkit-scrollbar {
+                display: none
+            }
+            }
+			
+			@media screen and (max-width: 1280px) and (orientation:portrait) {
+                .main{
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    box-shadow: unset;
+                }
+
+                .hImg{
+                    width: 100px !important;
+                    height: 100px !important;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+
+                .footDiv{
+                    direction: column;           
+                }
+                
+                body{
+                    background-image: unset;
+                    width: 100%;
+                }
+
+                h1{
+                    font-size: 32px;
+                }
+				
+				h2{
+					font-size: 28px;
+				}
+				p{
+					font-size:18px;
+				}
+				::-webkit-scrollbar{
+                display: none
+                }
+
+           		::-webkit-scrollbar {
+                display: none
+                }
+            }
 
         </style>
     </head>
     <body>
-        <!--Navbar-->
+       <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
                 <div>
