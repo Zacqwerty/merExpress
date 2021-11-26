@@ -1,0 +1,622 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Meryenda Express - Order</title>
+        <link rel="icon" href="./imgs/Meryenda_Express.png">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <script src="./js/prodList.js"></script>
+
+        <!--Styles-->
+        <style>
+            @font-face {
+                font-family: 'Martires';
+                src: url(./fonts/BBTMartiresFree-Regular.otf);
+            }
+
+            @font-face {
+                font-family: 'Quiapo';
+                src: url(./fonts/Quiapo_Free.otf);
+            }
+
+            @font-face {
+                font-family: 'Bantayog';
+                src: url(./fonts/Bantayog-Regular.otf);
+            }
+
+            .main{
+                position: relative;
+                width: 60%;
+                height: max-content;
+                margin: auto;
+                box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            .heading{
+                margin: 0;
+                margin-top: 30px;
+                padding: 35px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                background-color: #a88e61;
+                border-top: rgb(41, 41, 41) 4px solid;
+                border-bottom: rgb(41, 41, 41) 4px solid;
+            }
+
+            .section{
+                height: 100%;
+                background-color: #c0ad8c;
+                text-align: center;
+            }
+
+            .order{
+                width: 50%;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 12px;
+                display: inline-block;
+                text-align: center;
+                align-content: center;
+            }
+
+            .selItem{
+                margin: 17px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+            }
+
+            .ordList{
+                padding: 20px;
+                background-color: #a88e61;
+            }
+
+            .itemList{
+                background-color: transparent !important;
+                border-radius: 0 !important;
+                border: 1px solid !important;
+                border-left: 0 !important;
+                border-right: 0 !important;
+                text-align: left !important;
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+            }
+
+            .optionDiv{
+                display: flex !important;
+                text-align: center !important;
+                justify-content: center !important;
+                vertical-align: middle !important;
+                align-items: center !important;
+            }
+
+            .addBtn {
+                margin: 5px;
+                font-weight: bolder;
+                background-color: #856f4a;
+                box-shadow: 0px 0px 24px -12px rgba(0, 0, 0, 0.5);
+                transition: background-color 0.5s;
+            }
+
+            .addBtn:hover{
+                background-color: #a7967b;
+            }
+
+            .orderSect{
+                border-bottom: rgb(41, 41, 41) 4px solid;
+            }
+
+            .orderBtn{
+                margin-top: 5px;
+                width: 100%;
+                font-weight: bolder;
+                background-color: #856f4a;
+                transition: background-color 0.5s;
+            }
+
+            .orderBtn:hover{
+                background-color: #a7967b;
+            }
+			
+			.optPrice{
+                width: 100px;
+                margin: 0;
+                margin-left: 17px;
+                text-align: right;
+            }
+
+            .optBtn{
+                width: 35px;
+                height: 38px;
+            }
+
+            .infoDiv{
+                text-align: left;
+                padding: 45px;
+                border-top: rgb(41, 41, 41) 4px solid;
+
+            }
+
+            .blacktxt{
+                color: black !important;
+            }
+
+            .modHead{
+                font-family: Arial !important;
+                letter-spacing: 0px !important;
+            }
+
+            .footDiv{
+                display: flex;
+                direction: row;           
+            }
+
+            .subFoot{
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                margin-right: 15px;
+            }
+
+            body {
+                background: url(./imgs/BackgroundImage.png) center fixed;
+                background-size: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(236, 236, 236);
+                overflow: auto;
+            }
+
+            nav {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 0;
+                z-index: 10;
+            }
+
+            footer{
+                height: 18em;
+                width: 100%;
+                padding: 3em;
+                padding-left: 5em;
+                color:  white;
+                background-color: rgb(41, 41, 41);
+            }
+
+            h1{
+                font-family: 'Martires';
+                font-size: 72px;
+                font-weight: 1000;
+                letter-spacing: 3px;
+            }
+
+            h2{
+                padding-left: 12px !important;
+                text-align: left !important;
+                font-family: 'Bantayog';
+                font-size: 42px;
+                font-weight: '200';
+            }
+
+            h3{
+                margin: 0;
+                font-size: 36px;
+                font-family: 'Martires';
+                font-weight: bolder;
+                letter-spacing: 1px;
+            }
+
+            h5{
+                margin: 0;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-family: 'Martires';
+                font-size: 24px;
+                font-weight: bold;
+                letter-spacing: 2.5px;
+            }
+
+            p{
+                margin: 10px;
+                margin-bottom: 0;
+                font-family: 'Bantayog';
+                font-size: 18px !important;
+                font-weight: 500;
+            }
+
+            input{
+                margin-top: 2px !important;
+            }
+
+            input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+            }
+
+            input[type=number]{
+                width: 35px;
+                height: 38px;
+                -moz-appearance: textfield;
+                padding: 3px;
+                margin: 5px !important;
+                text-align: center;
+            }
+
+            label{
+                margin-left: 7px;
+                margin-bottom: 1px !important;
+                font-family: 'Bantayog';
+                font-size: 24px !important;
+                font-weight: 500;
+            }
+
+            button {
+                color: whitesmoke !important;
+            }
+			
+		@media screen and (max-width: 800px) and (orientation:portrait) {
+                .main{
+                    width: 100%;
+                    height: "fit-content";
+                    margin: 0;
+                    box-shadow: unset;
+                }
+				
+				.section{
+				height: auto;
+				}
+
+                .hImg{
+                    width: 100px !important;
+                    height: 100px !important;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+			
+				.orderBtn{
+					width: auto;
+				}
+			
+				.optionDiv{
+					height: 20px;
+           		 }
+			
+				.optBtn{
+					width: 15px;
+					height: 22px !important;
+					font-size: 8px;
+					text-align: center;
+				}
+				
+				.optPrice{
+					width:70px;
+				}
+
+                .footDiv{
+                    direction: column;           
+                }
+				
+				.infoDiv{
+					padding: 10px;
+					height: 90%;
+				}
+				.ordList{
+					display: flex;
+					flex-direction: row;
+				}
+				.form-label{
+					font-size: 5px;
+				}
+                
+                body{
+                    background-image: unset;
+                    width: 100%;
+					overflow:auto;
+                }
+
+				footer{
+					height: "fit-content";
+				}
+                h1{
+                    font-size: 24px;
+                }
+				
+				h2{
+					font-size: 18px;
+				}
+			
+				h3{
+					font-size: 18px;
+				}
+				h5{
+					font-size: 16px;
+				}
+				
+				p{
+					font-size: 12px;
+				}
+			
+				input[type=number]{
+					padding: 2px;
+             		height: 30px;
+           		 }
+
+            }
+			
+			@media screen and (max-width: 1280px) and (orientation:portrait) {
+                .main{
+                    width: 100%;
+                    height: "fit-content";
+                    margin: 0;
+                    box-shadow: unset;
+                }
+	
+				.section{
+				height: auto;
+				}
+
+                .hImg{
+                    width: 100px !important;
+                    height: 100px !important;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+				
+				.orderBtn{
+					width: 100%;
+				}
+				
+				.optionDiv{
+					flex-direction: row-reverse;
+           		 }
+				
+                .footDiv{
+                    direction: column;           
+                }
+				
+				.infoDiv{
+					padding: 10px;
+					height: 90%;
+				}
+				
+				.form-label{
+					font-size: 5px;
+				}
+                
+                body{
+                    background-image: unset;
+                    width: 100%;
+					overflow:auto;
+                }
+				
+				footer{
+                    padding: 20px;
+					height: "fit-content";
+				}
+
+                h1{
+                    font-size: 24px;
+                }
+				
+				h2{
+					font-size: 18px;
+				}
+				h3{
+					font-size: 18px;
+				}
+			
+				p{
+					font-size:12px;
+				}
+				
+				::-webkit-scrollbar{
+                display: none
+            	}
+
+           		::-webkit-scrollbar {
+                display: none
+            	}
+            }
+			
+			@media screen and (min-width: 375px) and (orientation:portrait) {
+				.optPrice{
+					width:60px;
+					margin-left:2px;
+				}
+				
+				.optBtn{
+					width: 12px;
+					height: 22px !important;
+					font-size: 6px;
+					text-align: center;
+					margin-left: 1px;
+				}
+				
+				h5{
+					font-size: 12px;
+					margin-left: 1px;
+				}
+				
+				input[type=number]{
+					padding: 2px;
+             		height: 30px;
+           		 }
+				::-webkit-scrollbar{
+                display: none
+            	}
+
+           		::-webkit-scrollbar {
+                display: none
+            	}
+			}
+			@media screen and (max-width: 360px) and (orientation:portrait) {
+                .d-flex{
+                    flex-direction: column;
+                }
+
+                .list-group-item{
+                    text-align: left;
+                    padding: 5px;
+                    align-content: flex-start;
+                }
+
+				.optBtn{
+                    padding: 0;
+                    margin: 2px;
+					width: 26px;
+					height: 26px !important;
+					font-size: 12px;
+					text-align: center;
+					margin-left: 1px;
+				}
+
+                .optionDiv{
+                    height: 32px;
+                    width: 100%;
+                }
+
+                .optPrice{
+                    margin-left: 50px;
+                    width: 40px;
+                }
+				
+                .ordList{
+                    padding: 7px;
+                }
+
+				h5{
+					font-size:16px;	
+				}
+				
+				input[type=number]{
+                    margin: 4px !important;
+					padding: 1px;
+                    width: 26px;
+             		height: 26px;
+                    font-size: 9px;
+           		 }
+				
+				::-webkit-scrollbar{
+                display: none
+            	}
+
+           		::-webkit-scrollbar {
+                display: none
+            	}
+            }
+				
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="#">
+                      <img src="./imgs/Meryenda_Express.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                      Meryenda Express
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarsExample04">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./product.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Order Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!--Body-->
+        <div class="main">
+           <div class="section">
+                <h1>Order Now!</h1>
+                <div>
+                    <h2 class="heading">Add a Meryenda:</h2>
+                    <div class="orderSect" id="selectOrd">
+
+                    </div>
+                    <div id="orderTab">
+
+                    </div>
+                </div>
+                <div class="infoDiv">
+                    <form action="./order.html" id="payform">
+                        <div class="mb-3">
+                            <label for="formName" class="form-label">Name of Receipient</label>
+                            <input type="text" class="form-control" id="formName" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formAdd" class="form-label">Delivery Address</label>
+                            <input type="text" class="form-control" id="formAdd" placeholder="Address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formNum" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="formNum" placeholder="Contact No.">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="pay">Payment Options</label>
+                            <select class="form-select" name="payment" id="pay">
+                                <option value="cod">Cash On Delivery</option>
+                                <option value="paypal">Credit/Debit Card</option>
+                                <option value="gcash">G-Cash</option>
+                                <option value="paymaya">Paymaya</option>
+                                <option value="paypal">Paypal</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <p>All Transactions are to be done when the delivery has arrived.</p>
+
+                    <button type="button" class="btn orderBtn" data-bs-toggle="modal" data-bs-target="#orderModal">Make order</button>
+                </div>
+           </div>
+           <div class="modal fade" id="orderModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="orderModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content blacktxt">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Order has been made!</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="modHead">Thank you for ordering meryenda with Meryenda Express! Your order will arive soon.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="cOrder">Go back Home</button>
+                            <button type="button" class="btn btn-primary" id="nOrder">Make new Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./js/orderSystem.js" id="sys" defer></script>
+        <footer>
+            Phone Number: +63 9XX XXX XXXX <br> <br>
+			Landline: (02) 8XXXXXXX <br> <br>
+			MeryendaExpress@kusina.com.ph <br> <br>
+            <div class="footDiv">
+                <div class="subFoot">
+                    <img src="./imgs/fb_logo.png" height="25px"> <span>&nbspMeryenda Express</span>
+                </div>
+                <div class="subFoot">
+                    <img src="./imgs/ig_logo.png" height="25px"> <span>&nbsp@Meryenda Express</span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

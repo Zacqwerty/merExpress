@@ -1,0 +1,299 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Meryenda Express - Home</title>
+        <link rel="icon" href="./imgs/Meryenda_Express.png">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <!--Styles-->
+        <style>
+            @font-face {
+                font-family: 'Martires';
+                src: url(./fonts/BBTMartiresFree-Regular.otf);
+            }
+
+            @font-face {
+                font-family: 'Quiapo';
+                src: url(./fonts/Quiapo_Free.otf);
+            }
+
+            @font-face {
+                font-family: 'Bantayog';
+                src: url(./fonts/Bantayog-Regular.otf);
+            }
+
+
+            .main{
+                position: relative;
+                width: 60%;
+                height: auto;
+                margin: auto;
+                box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            .heading{
+                width: 100%;
+                background-color: #c0ad8c;
+                padding: 15px;
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                justify-content: center;
+            }
+			
+			.heading-text{
+                height: 100%;
+                text-align: center;
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+			}
+
+            .hImg{
+                width: 300px !important;
+                height: 300px !important;
+                margin-right: 35px;
+                margin-left: 35px;
+            }
+
+            .hDivImg{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .section-one, .section-two{
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+            }
+
+            .section-one{
+                box-shadow: 0px 0px 50px 50px #c0ad8c inset;
+                background-color: #c0ad8c;
+            }
+
+            .section-two {
+                box-shadow: 0px 0px 50px 50px #a88e61 inset;
+                background-color: #a88e61;
+            }
+
+            .inSec{
+                width: 100%;
+                padding: 32px;
+            }
+
+            .footDiv{
+                display: flex;
+                direction: row;           
+            }
+
+            .subFoot{
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                margin-right: 15px;
+            }
+
+            body {
+                background: url(./imgs/BackgroundImage.png) center fixed;
+                background-size: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(236, 236, 236);
+                overflow: auto;
+            }
+
+            nav {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 0;
+                z-index: 10;
+            }
+
+            footer{
+                height: 18em;
+                width: 100%;
+                padding: 3em;
+                padding-left: 5em;
+                color:  white;
+                background-color: rgb(41, 41, 41);
+            }
+
+            h1{
+                color: white;
+                font-family: 'Martires';
+                font-size: 86px;
+                letter-spacing: 2px;
+                font-weight: bolder;
+            }
+
+            h2{
+                text-align: center;
+                color: white;
+                font-family: 'Quiapo';
+                font-size: 40px;
+                letter-spacing: 2px;
+            }
+
+            p{
+                margin-top: 15px;
+                text-align: justify;
+                color: white;
+                font-family: 'Bantayog';
+                font-size: 24px;
+            }
+
+            @media screen and (max-width: 800px) and (orientation:portrait) {
+                .main{
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    box-shadow: unset;
+                }
+
+                .hImg{
+                    width: 100px !important;
+                    height: 100px !important;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+
+                .footDiv{
+                    direction: column;           
+                }
+                
+                body{
+                    background-image: unset;
+                    width: 100%;
+                }
+
+                h1{
+                    font-size: 24px;
+                }
+            }
+
+            ::-webkit-scrollbar{
+                width: 15px;
+                height: 12px;
+            }
+
+            ::-webkit-scrollbar {
+                width: 15px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="#">
+                      <img src="./imgs/Meryenda_Express.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                      Meryenda Express
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarsExample04">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./product.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./order.html">Order Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!--Body-->
+        <div class="main">
+           <div class="heading"> 
+                <div class="heading-text">
+                  <h1>Meryenda Express</h1>
+                </div>
+                <div class="hDivImg">
+                    <img class="hImg" src="./imgs/Meryenda_Express.png" width="100%" height="100%">
+                </div>
+          </div>
+           <div class="section-two bg-one">
+               <div class="inSec">
+                    <h2>Gutom ka na ba? Tara na sa Meryenda Express! </h2>
+			<p>&nbsp&nbsp&nbsp&nbspFrom street food to kakanin, andito lahat sa 'min! Made with love from the hearts of our excellent chefs, everything we serve in Meryenda Express will fill your stomachs with joy and delight. So what are you waiting for? Order now at XXXX-XXXX!</p>
+               </div>
+          </div>
+            <div class="section-one">
+                <div class="inSec">
+                    <p>&nbsp&nbsp&nbsp&nbspEstablished in 2021, Meryenda Express was merely a thought two classmates came up with when both of them were hungry. Today, Meryenda Express is a well-renowned online food shop for all your meryenda cravings. With over 5000 orders delivered to people's homes, we can ensure you a 5 star rating of our food.</p>
+               </div>
+            </div>
+            <div class="section-two">
+                <div class="inSec">
+                    <h2>Street Food</h2>
+                    <p>&nbsp&nbsp&nbsp&nbspStreet food is ready-to-eat food usually sold in busy streets and public spaces. Don't have time to go outside for your favorite street food snacks? Meryenda Express has got you covered! </p>
+               </div>            
+            </div>
+            <div class="section-one">
+                <div class="inSec">
+                    <h2>Kakanin</h2>
+                    <p>&nbsp&nbsp&nbsp&nbspKakanin is an umbrella term for sweets made from glutinous rice and coconut milk. These sticky snacks are everyone's favorite!</p>
+               </div>
+            </div>
+            <div class="section-two">
+                <div class="inSec">
+                    <h2>Saging</h2>
+                    <p>&nbsp&nbsp&nbsp&nbspStreet food is ready-to-eat food usually sold in busy streets and public spaces. Don't have time to go outside for your favorite street food snacks? Meryenda Express has got you covered! </p>
+               </div>
+            </div>
+            <div class="section-one">
+                <div class="inSec">
+                    <h2>Kendi at Keyk</h2>
+                    <p>&nbsp&nbsp&nbsp&nbspDo you have a sweet tooth? Then you've come to the right place! All your favorite candies and cakes are at Meryenda Express. Go ahead and satisfy your sweet tooth!</p>
+               </div>
+            </div>
+        </div>
+
+        <footer>
+            Phone Number: +63 9XX XXX XXXX <br> <br>
+			Landline: (02) 8XXXXXXX <br> <br>
+			MeryendaExpress@kusina.com.ph <br> <br>
+            <div class="footDiv">
+                <div class="subFoot">
+                    <img src="./imgs/fb_logo.png" height="25px"> <span>&nbspMeryenda Express</span>
+                </div>
+                <div class="subFoot">
+                    <img src="./imgs/ig_logo.png" height="25px"> <span>&nbsp@Meryenda Express</span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
